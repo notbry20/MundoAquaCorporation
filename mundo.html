@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaCorporation</title>
+    <!-- Agregar Google Fonts para Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mundo.css">
+</head>
+<body>
+    <!-- Página de carga -->
+    <div id="pantalla-carga">
+        <div class="animacion-carga"></div>
+        <div class="texto-carga">Cargando el futuro<span class="puntos-carga"></span></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="contenedor-navegacion">
+            <div class="logo">
+                <img src="Nueva carpeta/logomulti.png" alt="logoups" class="logo-ups">
+            </div>
+            <ul class="menu-navegacion">
+                <li><a href="#creadores" class="boton-navegacion">Créditos</a></li>
+                <!-- REEMPLAZA EL # CON TU ENLACE AQUÍ -->
+                <li><a href="#" class="boton-navegacion">Volver</a></li>
+            </ul>
+            <div class="menu-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de video -->
+    <section class="seccion-video" id="inicio">
+        <video class="video-fondo" autoplay muted loop>
+            <source src="Nueva carpeta/VideoEscenario_1.mp4" type="video/mp4">
+        </video>
+        <div class="superposicion-video">
+            <h1 class="titulo-video">EL AGUA ES PODER</h1>
+            <p class="subtitulo-video">En un mundo sediento, solo los ricos pueden beber</p>
+            <button class="boton-principal" id="abrir-modal-video">Descubre la verdad</button>
+        </div>
+    </section>
+
+    <!-- Sección de historia -->
+    <section class="seccion-historia" id="historia">
+        <div class="fondo-historia">
+            <video class="video-fondo-historia" autoplay muted loop>
+                <source src="Nueva carpeta/VideoEscenario_3.mp4" type="video/mp4">
+            </video>
+            <div class="superposicion-fondo-historia"></div>
+        </div>
+        
+        <div class="contenedor-historia">
+            <div class="video-historia">
+                <video class="video-contenido" autoplay muted loop>
+                    <source src="Nueva carpeta/VideoPersonaje3.mp4" type ="video/mp4">
+                </video>
+            </div>
+            <div class="contenido-historia">
+                <h2 class="titulo-historia">AquaCorporation</h2>
+                <p class="texto-historia">
+                    Tras la privatización del agua por la Corporación AquaVida, el recurso vital se convierte en un lujo inalcanzable, sumiendo al mundo en una crisis de sed y enfermedad. Emilio, un joven de 18 años, observa como su comunidad se desmorona mientras los precios del agua se disparan. Aunque la desesperación y la enfermedad lo alcanzan, Emilio toma su celular para documentar la cruda verdad. Su último acto de resistencia es subir estas pruebas a la red, encendiendo la llama de una revolución nacida de la necesidad y la injusticia.
+                </p>
+                <p class="texto-historia">
+                    En el centro de esta historia está Emilio, un chico de 18 años, testigo directo del inicio
+                    del colapso y quizá del nacimiento de la resistencia.
+                </p>
+                
+                <div class="estadisticas-historia">
+                    <div class="estadistica">
+                        <div class="numero-estadistica">97%</div>
+                        <div class="etiqueta-estadistica">Agua controlada por corporaciones</div>
+                    </div>
+                    <div class="estadistica">
+                        <div class="numero-estadistica">2.3L</div>
+                        <div class="etiqueta-estadistica">Ración semanal por persona</div>
+                    </div>
+                    <div class="estadistica">
+                        <div class="numero-estadistica">4.5B</div>
+                        <div class="etiqueta-estadistica">Personas afectadas</div>
+                    </div>
+                </div>
+                
+                <div class="botones-accion">
+                    <!-- Botón para abrir popup PDF -->
+                    <button class="boton-accion boton-secundario" id="abrir-pdf-popup">Conocer más</button>
+                    <button class="boton-audio" id="reproducir-audio">
+                        <img src="Nueva carpeta/bocina.png" alt="Reproducir audio" class="icono-audio">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Modal de PDF -->
+    <div class="modal-pdf" id="modal-pdf">
+        <div class="contenido-modal-pdf">
+            <button class="cerrar-modal-pdf">&times;</button>
+            <div class="encabezado-modal-pdf">
+                <h3>AquaCorporation - artbook</h3>
+            </div>
+            <div class="contenedor-pdf">
+                <embed src="Nueva carpeta/artbookagua.pdf" type="application/pdf" class="pdf-embed">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de video -->
+    <div class="modal-video" id="modal-video">
+        <div class="contenido-modal">
+            <button class="cerrar-modal" id="cerrar-modal">&times;</button>
+            <video class="video-modal" controls>
+                <source src="Nueva carpeta/VideoEscenario_1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- Galería de Personajes -->
+    <section class="seccion-personajes" id="personajes">
+        <div class="video-fondo-personajes">
+            <video class="video-fondo" autoplay muted loop>
+                <source src="Nueva carpeta/VideoEscenario_3.mp4" type="video/mp4">
+            </video>
+            <div class="superposicion-personajes"></div>
+        </div>
+        
+        <div class="contenido-personajes">
+            <div class="encabezado-seccion">
+                <h2 class="titulo-seccion">Los Personajes</h2>
+                <p class="subtitulo-seccion">Conoce a los protagonistas de esta historia distópica</p>
+            </div>
+            
+            <div class="cuadricula-personajes">
+                <div class="tarjeta-personaje" data-personaje="emilio">
+                    <video class="video-personaje" autoplay muted loop>
+                        <source src="Nueva carpeta/VideoPersonajes_1.mp4" type="video/mp4">
+                    </video>
+                    <div class="superposicion-personaje">
+                        <h3 class="nombre-personaje">Emilio</h3>
+                        <p class="rol-personaje">El Revolucionario</p>
+                    </div>
+                </div>
+                
+                <div class="tarjeta-personaje" data-personaje="leonardo">
+                    <!-- video -->
+                    <video class="video-personaje" autoplay muted loop>
+                        <source src="Nueva carpeta/Malvado_OjoBrillante.mp4" type="video/mp4">
+                    </video>
+                    <div class="superposicion-personaje">
+                        <h3 class="nombre-personaje">Leonardo</h3>
+                        <p class="rol-personaje">El empresario</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Emilio -->
+    <div class="modal-personaje" id="modal-emilio">
+        <div class="contenido-modal-personaje">
+            <button class="cerrar-modal-personaje">&times;</button>
+            <div class="cuerpo-modal-personaje">
+                <!-- video -->
+                <video class="video-modal-personaje" autoplay muted loop>
+                    <source src="Nueva carpeta/VideoPersonajes_1.mp4" type="video/mp4">
+                </video>
+                <div class="info-modal-personaje">
+                    <h2 class="nombre-modal-personaje">Emilio</h2>
+                    <p class="rol-modal-personaje">El Revolucionario</p>
+                    <p class="descripcion-modal-personaje">
+                        Un joven de 18 años que se convierte en el símbolo de la resistencia contra AquaCorporation. 
+                        Tras presenciar cómo su comunidad sufre por la escasez de agua, decide documentar la verdad 
+                        y exponer las injusticias del sistema.
+                    </p>
+                    
+                    <div class="estadisticas-personaje">
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">85%</div>
+                            <div class="etiqueta-estadistica">Determinación</div>
+                        </div>
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">70%</div>
+                            <div class="etiqueta-estadistica">Liderazgo</div>
+                        </div>
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">90%</div>
+                            <div class="etiqueta-estadistica">Coraje</div>
+                        </div>
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">65%</div>
+                            <div class="etiqueta-estadistica">Estrategia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Leonardo -->
+    <div class="modal-personaje" id="modal-leonardo">
+        <div class="contenido-modal-personaje">
+            <button class="cerrar-modal-personaje">&times;</button>
+            <div class="cuerpo-modal-personaje">
+                <!-- video -->
+                <video class="video-modal-personaje" autoplay muted loop>
+                    <source src="Nueva carpeta/Malvado_OjoBrillante.mp4" type="video/mp4">
+                </video>
+                <div class="info-modal-personaje">
+                    <h2 class="nombre-modal-personaje">Leonardo</h2>
+                    <p class="rol-modal-personaje">El empresario</p>
+                    <p class="descripcion-modal-personaje">
+                       Es un hombre de negocios frío, calculador y obsesionado con el control. Es ambicioso, cínico y
+                       completamente indiferente al sufrimiento de la población. Para él, el agua no es un
+                       derecho humano, sino un recurso monetizable, un producto que debe generar ganancias
+                       sin importar quién quede sediento.
+                    </p>
+                    
+                    <div class="estadisticas-personaje">
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">95%</div>
+                            <div class="etiqueta-estadistica">Inteligencia</div>
+                        </div>
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">97%</div>
+                            <div class="etiqueta-estadistica">Ambición</div>
+                        </div>
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">75%</div>
+                            <div class="etiqueta-estadistica">Antipático</div>
+                        </div>
+                        <div class="item-estadistica">
+                            <div class="valor-estadistica">60%</div>
+                            <div class="etiqueta-estadistica">Egocéntrico</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de creadores -->
+    <section class="seccion-creadores" id="creadores">
+        <div class="encabezado-seccion">
+            <h2 class="titulo-seccion">Los Creadores</h2>
+            <p class="subtitulo-seccion">El equipo detrás de esta historia</p>
+        </div>
+        
+        <div class="cuadricula-creadores">
+            <div class="tarjeta-creador">
+                <img src="Nueva carpeta/JossMorocho.png" alt="Josselyn Morocho" class="foto_creador">
+                <div class="info-creador">
+                    <h3 class="nombre-creador">Josselyn Morocho</h3>
+                    <p class="rol-creador">Diseñadora Creativa</p>
+                    <p class="descripcion-creador">Especializada en desarrollar conceptos visuales innovadores, combinando estética y funcionalidad para crear piezas impactantes dentro de nuestro proyecto</p>
+                    <button class="boton-creador" onclick="window.location.href='https://josswithdoubles.github.io/Josselyn-CV/'">Ver perfil</button>
+                </div>
+            </div>
+            
+            <div class="tarjeta-creador">
+                <img src="Nueva carpeta/BrayanArboleda.png" alt="Brayan Arboleda" class="foto_creador">
+                <div class="info-creador">
+                    <h3 class="nombre-creador">Brayan Arboleda</h3>
+                    <p class="rol-creador">Animador</p>
+                    <p class="descripcion-creador">Encargado del diseño de personajes y escenarios. Su trabajo define la estética única y atmosférica del mundo de AquaCorporation.</p>
+                    <button class="boton-creador" onclick="window.location.href='https://notbry20.github.io/Cv_Portafolio_/'">Ver perfil</button>
+                </div>
+            </div>
+            
+            <div class="tarjeta-creador">
+                <img src="Nueva carpeta/RichardMartinez.png" alt="Richard Martinez" class="foto_creador">
+                <div class="info-creador">
+                    <h3 class="nombre-creador">Richard Martinez</h3>
+                    <p class="rol-creador">Desarrollador Web</p>
+                    <p class="descripcion-creador">Responsable de la implementación técnica y experiencia de usuario. Asegura que la historia llega de manera inmersiva a la audiencia.</p>
+                    <button class="boton-creador" onclick="window.location.href='https://rmartinezj69-sys.github.io/PortafolioRichardMartinez'">Ver perfil</button>
+                </div>
+            </div>
+            
+            <div class="tarjeta-creador">
+                <img src="Nueva carpeta/Emily.png" alt="Emily Rosero" class="foto_creador">
+                <div class="info-creador">
+                    <h3 class="nombre-creador">Emily Rosero</h3>
+                    <p class="rol-creador">Guionista</p>
+                    <p class="descripcion-creador">Especializada en crear historias que conectan. Desarrollo personajes, diálogos y narrativas para el proyecto, siempre buscando transmitir emociones y construir relatos que atrapen desde el inicio.</p>
+                    <button class="boton-creador" onclick="window.location.href='https://github.com/EmiRosero/CurriculumEmilyRosero.git'">Ver perfil</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio oculto -->
+    <audio id="reproductor-audio" preload="auto">
+        <source src="Nueva carpeta/AQUACORPORATION.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h3 class="titulo-pie">AquaCorporation</h3>
+                <p class="texto-pie">Luchando por un futuro donde el agua sea un derecho, no un privilegio.</p>
+            </div>
+            
+            <div class="seccion-pie">
+                <h4 class="subtitulo-pie">Enlaces rápidos</h4>
+                <ul class="enlaces-pie">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#personajes">Personajes</a></li>
+                    <li><a href="#creadores">Creadores</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="fondo-pie">
+            <p>Carrera de Diseño Multimedia - Universidad Politécnica Salesiana &copy; Derechos Reservados 2025</p>
+        </div>
+    </footer>
+
+    <script src="mundo.js"></script>
+</body>
+</html>

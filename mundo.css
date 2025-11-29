@@ -1,0 +1,1245 @@
+
+:root {
+    --color-primario: #0D1623;
+    --color-secundario: #1E1C3D;
+    --color-accento: #E59F12;
+    --color-destacado: #E59F12;
+    --color-blanco: #FFFFFF;
+    --color-oscuro: #060A10;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== CLASES DE RALEWAY PARA TÍTULOS ===== */
+.raleway-titulo {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.raleway-titulo-light {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.raleway-titulo-bold {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* ===== CLASES DE RALEWAY PARA SUBTÍTULOS Y TEXTO NORMAL ===== */
+.raleway-subtitulo {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.raleway-normal {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.raleway-light {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* ===== APLICACIÓN DE FUENTES A LOS ELEMENTOS ===== */
+
+/* Títulos principales */
+.titulo-video,
+.titulo-historia,
+.titulo-seccion,
+.nombre-modal-personaje,
+.titulo-pie,
+.subtitulo-pie {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Subtítulos */
+.subtitulo-video,
+.subtitulo-seccion,
+.rol-personaje,
+.rol-modal-personaje,
+.rol-creador {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Texto normal */
+.texto-historia,
+.descripcion-modal-personaje,
+.descripcion-creador,
+.texto-pie,
+.etiqueta-estadistica {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Texto más ligero */
+.boton-navegacion,
+.boton-principal,
+.boton-accion,
+.boton-creador,
+.enlaces-pie a {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Números y estadísticas */
+.numero-estadistica,
+.valor-estadistica {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ===== PANTALLA DE CARGA ===== */
+#pantalla-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-oscuro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.animacion-carga {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(100, 255, 218, 0.3);
+    border-top: 5px solid var(--color-accento);
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.texto-carga {
+    color: var(--color-blanco);
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.puntos-carga::after {
+    content: '';
+    animation: puntos 1.5s steps(5, end) infinite;
+}
+
+@keyframes puntos {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60% { content: '...'; }
+    80%, 100% { content: ''; }
+}
+
+/* ===== ENCABEZADO Y NAVEGACIÓN ===== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(10, 25, 47, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.contenedor-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo-ups {
+    height: 40px;
+    width: auto;
+}
+
+.menu-navegacion {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.boton-navegacion {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-color: var(--color-secundario);
+}
+
+.boton-navegacion:hover {
+    background-color: var(--color-accento);
+    color: var(--color-oscuro);
+}
+
+.menu-hamburguesa {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-hamburguesa span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-blanco);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.menu-hamburguesa.activo span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-hamburguesa.activo span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburguesa.activo span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ===== SECCIÓN DE VIDEO ===== */
+.seccion-video {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.superposicion-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.titulo-video {
+    font-size: 4rem;
+    color: var(--color-destacado);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subtitulo-video {
+    font-size: 1.5rem;
+    color: var(--color-blanco);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.boton-principal {
+    padding: 1rem 2rem;
+    background-color: var(--color-accento);
+    color: var(--color-oscuro);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.boton-principal:hover {
+    background-color: var(--color-destacado);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SECCIÓN DE HISTORIA ===== */
+.seccion-historia {
+    position: relative;
+    padding: 5rem 2rem;
+    overflow: hidden;
+}
+
+.fondo-historia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-fondo-historia {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.superposicion-fondo-historia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.85);
+}
+
+.contenedor-historia {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.video-historia {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(30, 29, 29, 0.3);
+}
+
+.video-contenido {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contenido-historia {
+    flex: 1;
+}
+
+.titulo-historia {
+    font-size: 2.5rem;
+    color: var(--color-destacado);
+    margin-bottom: 1.5rem;
+}
+
+.texto-historia {
+    color: var(--color-blanco);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.estadisticas-historia {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.estadistica {
+    text-align: center;
+}
+
+.numero-estadistica {
+    font-size: 2rem;
+    color: var(--color-accento);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.etiqueta-estadistica {
+    color: var(--color-blanco);
+    font-size: 0.9rem;
+}
+
+.botones-accion {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.boton-accion {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-accento);
+    color: var(--color-oscuro);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-accion:hover {
+    background-color: var(--color-destacado);
+    transform: translateY(-3px);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid var(--color-accento);
+    color: var(--color-accento);
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-accento);
+    color: var(--color-oscuro);
+}
+
+/* ===== BOTÓN DE AUDIO ===== */
+.boton-audio {
+    background-color: var(--color-accento);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-audio:hover {
+    background-color: var(--color-destacado);
+    transform: scale(1.1);
+}
+
+.icono-audio {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== MODAL DE PDF MEJORADO ===== */
+.modal-pdf {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-pdf.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenido-modal-pdf {
+    position: relative;
+    background-color: var(--color-primario);
+    border-radius: 15px;
+    width: 95%;
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    border: 2px solid var(--color-accento);
+}
+
+.cerrar-modal-pdf {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-accento);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+    color: var(--color-oscuro);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.cerrar-modal-pdf:hover {
+    background-color: var(--color-destacado);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(229, 159, 18, 0.5);
+}
+
+.encabezado-modal-pdf {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-primario) 100%);
+    border-bottom: 3px solid var(--color-accento);
+    text-align: center;
+}
+
+.encabezado-modal-pdf h3 {
+    color: var(--color-destacado);
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.encabezado-modal-pdf p {
+    color: var(--color-blanco);
+    opacity: 0.9;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.contenedor-pdf {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el PDF embebido */
+.pdf-embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Botones de acción del PDF */
+.botones-pdf {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background-color: var(--color-secundario);
+    border-top: 2px solid var(--color-accento);
+}
+
+.boton-descarga, .boton-imprimir {
+    padding: 0.8rem 1.8rem;
+    background-color: var(--color-accento);
+    color: var(--color-oscuro);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.boton-descarga:hover, .boton-imprimir:hover {
+    background-color: var(--color-destacado);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== MODAL DE VIDEO ===== */
+.modal-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-video.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenido-modal {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--color-blanco);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.video-modal {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== SECCIÓN DE PERSONAJES ===== */
+.seccion-personajes {
+    position: relative;
+    padding: 5rem 2rem;
+    overflow: hidden;
+}
+
+.video-fondo-personajes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.superposicion-personajes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: -1;
+}
+
+.contenido-personajes {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.titulo-seccion {
+    font-size: 2.5rem;
+    color: var(--color-destacado);
+    margin-bottom: 1rem;
+}
+
+.subtitulo-seccion {
+    font-size: 1.2rem;
+    color: var(--color-blanco);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cuadricula-personajes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tarjeta-personaje {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 400px;
+}
+
+.tarjeta-personaje:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TARJETAS DE PERSONAJES CON VIDEO ===== */
+.video-personaje {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-personaje:hover .video-personaje {
+    transform: scale(1.05);
+}
+
+.superposicion-personaje {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-personaje:hover .superposicion-personaje {
+    transform: translateY(0);
+}
+
+.nombre-personaje {
+    font-size: 1.8rem;
+    color: var(--color-accento);
+    margin-bottom: 0.5rem;
+}
+
+.rol-personaje {
+    font-size: 1.1rem;
+    color: var(--color-blanco);
+    font-weight: 500;
+}
+
+/* ===== MODAL DE PERSONAJE ===== */
+.modal-personaje {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 2rem;
+}
+
+.modal-personaje.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenido-modal-personaje {
+    position: relative;
+    background-color: var(--color-primario);
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cerrar-modal-personaje {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-accento);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: var(--color-oscuro);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.cerrar-modal-personaje:hover {
+    background-color: var(--color-destacado);
+    transform: scale(1.1);
+}
+
+.cuerpo-modal-personaje {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .cuerpo-modal-personaje {
+        flex-direction: row;
+    }
+}
+
+/* ===== VIDEO EN MODAL DE PERSONAJE ===== */
+.video-modal-personaje {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .video-modal-personaje {
+        width: 40%;
+        height: auto;
+    }
+}
+
+.info-modal-personaje {
+    padding: 2rem;
+    flex: 1;
+}
+
+.nombre-modal-personaje {
+    font-size: 2.2rem;
+    color: var(--color-destacado);
+    margin-bottom: 0.5rem;
+}
+
+.rol-modal-personaje {
+    font-size: 1.3rem;
+    color: var(--color-accento);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.descripcion-modal-personaje {
+    color: var(--color-blanco);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.estadisticas-personaje {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.item-estadistica {
+    background-color: var(--color-secundario);
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.item-estadistica:hover {
+    transform: translateY(-5px);
+}
+
+.valor-estadistica {
+    font-size: 2rem;
+    color: var(--color-accento);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.etiqueta-estadistica {
+    color: var(--color-blanco);
+    font-size: 0.9rem;
+}
+
+/* ===== SECCIÓN DE CREADORES ===== */
+.seccion-creadores {
+    padding: 5rem 2rem;
+    background-color: var(--color-secundario);
+}
+
+.cuadricula-creadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-creador {
+    background-color: var(--color-primario);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tarjeta-creador:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.foto_creador {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 3px solid var(--color-accento);
+    display: block;
+}
+
+.info-creador {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-creador {
+    font-size: 1.5rem;
+    color: var(--color-destacado);
+    margin-bottom: 0.5rem;
+}
+
+.rol-creador {
+    font-size: 1rem;
+    color: var(--color-accento);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.descripcion-creador {
+    color: var(--color-blanco);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.boton-creador {
+    padding: 0.7rem 1.5rem;
+    background-color: var(--color-accento);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.boton-creador:hover {
+    background-color: var(--color-destacado);
+    color: var(--color-oscuro);
+    transform: translateY(-2px);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.pie-pagina {
+    background-color: var(--color-primario);
+    padding: 3rem 2rem 1rem;
+    border-top: 3px solid var(--color-accento);
+}
+
+.contenido-pie {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.seccion-pie {
+    flex: 1;
+    min-width: 250px;
+}
+
+.titulo-pie {
+    color: var(--color-destacado);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.titulo-pie::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-accento);
+}
+
+.subtitulo-pie {
+    color: var(--color-destacado);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.subtitulo-pie::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-accento);
+}
+
+.texto-pie {
+    color: var(--color-blanco);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 300px;
+}
+
+.enlaces-pie {
+    list-style: none;
+    padding: 0;
+}
+
+.enlaces-pie li {
+    margin-bottom: 0.8rem;
+}
+
+.enlaces-pie a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.3rem 0;
+    display: inline-block;
+    position: relative;
+}
+
+.enlaces-pie a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accento);
+    transition: width 0.3s ease;
+}
+
+.enlaces-pie a:hover {
+    color: var(--color-accento);
+    transform: translateX(5px);
+}
+
+.enlaces-pie a:hover::before {
+    width: 100%;
+}
+
+.fondo-pie {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: var(--color-blanco);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE MEJORADO ===== */
+@media (max-width: 1024px) {
+    .titulo-video {
+        font-size: 3rem;
+    }
+    
+    .subtitulo-video {
+        font-size: 1.2rem;
+    }
+    
+    /* Creadores: 2x2 en tablets */
+    .cuadricula-creadores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header responsive */
+    .menu-navegacion {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primario);
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    .menu-navegacion.activo {
+        display: flex;
+    }
+    
+    .menu-hamburguesa {
+        display: flex;
+    }
+    
+    /* Sección video responsive */
+    .titulo-video {
+        font-size: 2.5rem;
+    }
+    
+    .subtitulo-video {
+        font-size: 1.1rem;
+    }
+    
+    /* Sección historia responsive */
+    .contenedor-historia {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .estadisticas-historia {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    /* Personajes responsive */
+    .cuadricula-personajes {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Creadores responsive - 1 columna en móvil */
+    .cuadricula-creadores {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Modales responsive */
+    .contenido-modal-pdf {
+        width: 98%;
+        height: 90vh;
+        margin: 1rem;
+    }
+    
+    .encabezado-modal-pdf {
+        padding: 1.5rem 1rem;
+    }
+    
+    .encabezado-modal-pdf h3 {
+        font-size: 1.4rem;
+    }
+    
+    .encabezado-modal-pdf p {
+        font-size: 1rem;
+    }
+    
+    .botones-pdf {
+        padding: 1rem;
+        flex-direction: column;
+    }
+    
+    .boton-descarga, .boton-imprimir {
+        width: 100%;
+    }
+    
+    .cerrar-modal-pdf {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .contenido-modal {
+        width: 95%;
+    }
+    
+    /* Pie de página responsive */
+    .contenido-pie {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .seccion-pie {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-video {
+        font-size: 2rem;
+    }
+    
+    .subtitulo-video {
+        font-size: 1rem;
+    }
+    
+    .titulo-historia,
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+    
+    .seccion-historia,
+    .seccion-personajes,
+    .seccion-creadores {
+        padding: 3rem 1rem;
+    }
+    
+    .boton-principal,
+    .boton-accion {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
