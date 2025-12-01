@@ -1,0 +1,128 @@
+{
+  "proyecto": {
+    "titulo": "AquaCorporation",
+    "slogan": "EL AGUA ES PODER",
+    "subtitulo": "En un mundo sediento, solo los ricos pueden beber"
+  },
+  "historia": {
+    "titulo": "AquaCorporation",
+    "descripciones": [
+      "Tras la privatización del agua por la Corporación AquaVida, el recurso vital se convierte en un lujo inalcanzable, sumiendo al mundo en una crisis de sed y enfermedad. Emilio, un joven de 18 años, observa como su comunidad se desmorona mientras los precios del agua se disparan. Aunque la desesperación y la enfermedad lo alcanzan, Emilio toma su celular para documentar la cruda verdad. Su último acto de resistencia es subir estas pruebas a la red, encendiendo la llama de una revolución nacida de la necesidad y la injusticia.",
+      "En el centro de esta historia está Emilio, un chico de 18 años, testigo directo del inicio del colapso y quizá del nacimiento de la resistencia."
+    ],
+    "estadisticas": [
+      {
+        "numero": "97%",
+        "etiqueta": "Agua controlada por corporaciones"
+      },
+      {
+        "numero": "2.3L",
+        "etiqueta": "Ración semanal por persona"
+      },
+      {
+        "numero": "4.5B",
+        "etiqueta": "Personas afectadas"
+      }
+    ]
+  },
+  "personajes": {
+    "titulo": "Los Personajes",
+    "subtitulo": "Conoce a los protagonistas de esta historia distópica",
+    "lista": [
+      {
+        "id": "emilio",
+        "nombre": "Emilio",
+        "rol": "El Revolucionario",
+        "video": "Nueva carpeta/VideoPersonajes_1.mp4",
+        "descripcion": "Un joven de 18 años que se convierte en el símbolo de la resistencia contra AquaCorporation. Tras presenciar cómo su comunidad sufre por la escasez de agua, decide documentar la verdad y exponer las injusticias del sistema.",
+        "estadisticas": [
+          {
+            "valor": "85%",
+            "etiqueta": "Determinación"
+          },
+          {
+            "valor": "70%",
+            "etiqueta": "Liderazgo"
+          },
+          {
+            "valor": "90%",
+            "etiqueta": "Coraje"
+          },
+          {
+            "valor": "65%",
+            "etiqueta": "Estrategia"
+          }
+        ]
+      },
+      {
+        "id": "leonardo",
+        "nombre": "Leonardo",
+        "rol": "El empresario",
+        "video": "Nueva carpeta/Malvado_OjoBrillante.mp4",
+        "descripcion": "Es un hombre de negocios frío, calculador y obsesionado con el control. Es ambicioso, cínico y completamente indiferente al sufrimiento de la población. Para él, el agua no es un derecho humano, sino un recurso monetizable, un producto que debe generar ganancias sin importar quién quede sediento.",
+        "estadisticas": [
+          {
+            "valor": "95%",
+            "etiqueta": "Inteligencia"
+          },
+          {
+            "valor": "97%",
+            "etiqueta": "Ambición"
+          },
+          {
+            "valor": "75%",
+            "etiqueta": "Antipático"
+          },
+          {
+            "valor": "60%",
+            "etiqueta": "Egocéntrico"
+          }
+        ]
+      }
+    ]
+  },
+  "creadores": {
+    "titulo": "Los Creadores",
+    "subtitulo": "El equipo detrás de esta historia",
+    "lista": [
+      {
+        "nombre": "Josselyn Morocho",
+        "rol": "Diseñadora Creativa",
+        "descripcion": "Especializada en desarrollar conceptos visuales innovadores, combinando estética y funcionalidad para crear piezas impactantes dentro de nuestro proyecto",
+        "foto": "Nueva carpeta/JossMorocho.png",
+        "enlace": "https://josswithdoubles.github.io/Josselyn-CV/"
+      },
+      {
+        "nombre": "Brayan Arboleda",
+        "rol": "Animador",
+        "descripcion": "Encargado del diseño de personajes y escenarios. Su trabajo define la estética única y atmosférica del mundo de AquaCorporation.",
+        "foto": "Nueva carpeta/BrayanArboleda.png",
+        "enlace": "https://notbry20.github.io/Cv_Portafolio_/"
+      },
+      {
+        "nombre": "Richard Martinez",
+        "rol": "Desarrollador Web",
+        "descripcion": "Responsable de la implementación técnica y experiencia de usuario. Asegura que la historia llega de manera inmersiva a la audiencia.",
+        "foto": "Nueva carpeta/RichardMartinez.png",
+        "enlace": "https://rmartinezj69-sys.github.io/PortafolioRichardMartinez"
+      },
+      {
+        "nombre": "Emily Rosero",
+        "rol": "Guionista",
+        "descripcion": "Especializada en crear historias que conectan. Desarrollo personajes, diálogos y narrativas para el proyecto, siempre buscando transmitir emociones y construir relatos que atrapen desde el inicio.",
+        "foto": "Nueva carpeta/Emily.png",
+        "enlace": "https://github.com/EmiRosero/CurriculumEmilyRosero.git"
+      }
+    ]
+  },
+  "recursos": {
+    "videos": {
+      "fondoPrincipal": "Nueva carpeta/VideoEscenario_1.mp4",
+      "fondoSecundario": "Nueva carpeta/VideoEscenario_3.mp4",
+      "videoHistoria": "Nueva carpeta/VideoPersonaje3.mp4"
+    },
+    "audio": "Nueva carpeta/AQUACORPORATION.mp3",
+    "pdf": "Nueva carpeta/artbookagua.pdf",
+    "logo": "Nueva carpeta/logomulti.png"
+  }
+}
