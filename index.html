@@ -2,22 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AquaCorporation</title>
-    <!-- Agregar Google Fonts para Raleway -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mundo.css">
 </head>
 <body>
-    <!-- Página de carga -->
     <div id="pantalla-carga">
         <div class="animacion-carga"></div>
         <div class="texto-carga">Cargando el futuro<span class="puntos-carga"></span></div>
     </div>
 
-    <!-- Header -->
     <header>
         <nav class="contenedor-navegacion">
             <div class="logo">
@@ -25,7 +22,6 @@
             </div>
             <ul class="menu-navegacion">
                 <li><a href="#creadores" class="boton-navegacion">Créditos</a></li>
-                <!-- REEMPLAZA EL # CON TU ENLACE AQUÍ -->
                 <li><a href="https://donmayoneso.github.io/ods6proGest/volver.html" class="boton-navegacion">Volver</a></li>
             </ul>
             <div class="menu-hamburguesa">
@@ -36,9 +32,9 @@
         </nav>
     </header>
 
-    <!-- Sección de video -->
+ 
     <section class="seccion-video" id="inicio">
-        <video class="video-fondo" autoplay muted loop>
+        <video class="video-fondo" autoplay muted loop playsinline webkit-playsinline>
             <source src="Nueva carpeta/VideoEscenario_1.mp4" type="video/mp4">
         </video>
         <div class="superposicion-video">
@@ -48,10 +44,10 @@
         </div>
     </section>
 
-    <!-- Sección de historia -->
+ 
     <section class="seccion-historia" id="historia">
         <div class="fondo-historia">
-            <video class="video-fondo-historia" autoplay muted loop>
+            <video class="video-fondo-historia" autoplay muted loop playsinline webkit-playsinline>
                 <source src="Nueva carpeta/VideoEscenario_3.mp4" type="video/mp4">
             </video>
             <div class="superposicion-fondo-historia"></div>
@@ -59,8 +55,8 @@
         
         <div class="contenedor-historia">
             <div class="video-historia">
-                <video class="video-contenido" autoplay muted loop>
-                    <source src="Nueva carpeta/VideoPersonaje3.mp4" type ="video/mp4">
+                <video class="video-contenido" autoplay muted loop playsinline webkit-playsinline>
+                    <source src="Nueva carpeta/VideoPersonaje3.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="contenido-historia">
@@ -89,7 +85,7 @@
                 </div>
                 
                 <div class="botones-accion">
-                    <!-- Botón para abrir popup PDF -->
+                 
                     <button class="boton-accion boton-secundario" id="abrir-pdf-popup">Conocer más</button>
                     <button class="boton-audio" id="reproducir-audio">
                         <img src="Nueva carpeta/bocina.png" alt="Reproducir audio" class="icono-audio">
@@ -99,7 +95,7 @@
         </div>
     </section>
 
-   <!-- Modal de PDF -->
+
     <div class="modal-pdf" id="modal-pdf">
         <div class="contenido-modal-pdf">
             <button class="cerrar-modal-pdf">&times;</button>
@@ -112,20 +108,20 @@
         </div>
     </div>
 
-    <!-- Modal de video -->
+
     <div class="modal-video" id="modal-video">
         <div class="contenido-modal">
             <button class="cerrar-modal" id="cerrar-modal">&times;</button>
-            <video class="video-modal" controls>
+            <video class="video-modal" controls playsinline webkit-playsinline>
                 <source src="Nueva carpeta/VideoEscenario_1.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
-    <!-- Galería de Personajes -->
+
     <section class="seccion-personajes" id="personajes">
         <div class="video-fondo-personajes">
-            <video class="video-fondo" autoplay muted loop>
+            <video class="video-fondo" autoplay muted loop playsinline webkit-playsinline>
                 <source src="Nueva carpeta/VideoEscenario_3.mp4" type="video/mp4">
             </video>
             <div class="superposicion-personajes"></div>
@@ -137,35 +133,27 @@
                 <p class="subtitulo-seccion">Conoce a los protagonistas de esta historia distópica</p>
             </div>
             
-            <!-- Esta sección se llenará dinámicamente desde JSON -->
+         
             <div class="cuadricula-personajes">
-                <!-- Los personajes se cargarán aquí automáticamente -->
+          
             </div>
         </div>
     </section>
 
-    <!-- Los modales de personajes se crearán dinámicamente desde JSON -->
-    <!-- No necesitan estar en el HTML inicial -->
-
-    <!-- Sección de creadores -->
     <section class="seccion-creadores" id="creadores">
         <div class="encabezado-seccion">
             <h2 class="titulo-seccion">Los Creadores</h2>
             <p class="subtitulo-seccion">El equipo detrás de esta historia</p>
         </div>
         
-        <!-- Esta sección se llenará dinámicamente desde JSON -->
         <div class="cuadricula-creadores">
-            <!-- Los creadores se cargarán aquí automáticamente -->
         </div>
     </section>
 
-    <!-- Audio oculto -->
     <audio id="reproductor-audio" preload="auto">
         <source src="Nueva carpeta/AQUACORPORATION.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Footer -->
     <footer class="pie-pagina">
         <div class="contenido-pie">
             <div class="seccion-pie">
