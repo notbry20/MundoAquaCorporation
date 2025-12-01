@@ -6,12 +6,10 @@ window.addEventListener('load', function() {
     console.log('Página cargada - Iniciando pantalla de carga');
     const loadingScreen = document.getElementById('pantalla-carga');
     
-    // Cargar datos JSON primero
+    // Cargar datos JSON primero - CORREGIDO: ahora carga 'mundo.json'
     cargarDatosJSON().then(() => {
-        // Una vez cargados los datos, inicializar la página
         inicializarPagina();
         
-        // Ocultar pantalla de carga después de un tiempo
         if (loadingScreen) {
             setTimeout(() => {
                 loadingScreen.style.opacity = '0';
@@ -23,21 +21,18 @@ window.addEventListener('load', function() {
         }
     }).catch(error => {
         console.error('Error cargando datos JSON:', error);
-        // En caso de error, cargar datos de respaldo
         datosProyecto = obtenerDatosRespaldo();
         inicializarPagina();
         
-        // Ocultar pantalla de carga
         if (loadingScreen) {
             loadingScreen.style.display = 'none';
         }
     });
 });
 
-// Función para cargar datos JSON
 async function cargarDatosJSON() {
     try {
-        const response = await fetch('datos.json');
+        const response = await fetch('mundo.json');
         if (!response.ok) {
             throw new Error('Error al cargar el archivo JSON: ' + response.status);
         }
@@ -165,7 +160,7 @@ function obtenerDatosRespaldo() {
                     "rol": "Guionista",
                     "descripcion": "Especializada en crear historias que conectan. Desarrollo personajes, diálogos y narrativas para el proyecto, siempre buscando transmitir emociones y construir relatos que atrapen desde el inicio.",
                     "foto": "Nueva carpeta/Emily.png",
-                    "enlace": "https://github.com/EmiRosero/CurriculumEmilyRosero.git"
+                    "enlace": "https://emirosero.github.io/PortafolioEmily2/"
                 }
             ]
         }
@@ -184,6 +179,9 @@ function inicializarPagina() {
     
     // Inicializar funcionalidades existentes
     inicializarFuncionalidades();
+    
+    // Inicializar correcciones para móviles
+    inicializarCorreccionesMoviles();
 }
 
 // Función para actualizar el contenido con datos JSON
@@ -247,7 +245,7 @@ function actualizarSeccionHistoria() {
     }
 }
 
-// Actualizar personajes
+// Actualizar personajes - CORREGIDO PARA MÓVILES
 function actualizarPersonajes() {
     const cuadriculaPersonajes = document.querySelector('.cuadricula-personajes');
     const tituloPersonajes = document.querySelector('.seccion-personajes .titulo-seccion');
@@ -272,7 +270,15 @@ function actualizarPersonajes() {
             tarjetaPersonaje.setAttribute('data-personaje', personaje.id);
             
             tarjetaPersonaje.innerHTML = `
-                <video class="video-personaje" autoplay muted loop>
+                <video class="video-personaje" 
+                       autoplay 
+                       muted 
+                       loop 
+                       playsinline 
+                       webkit-playsinline 
+                       preload="metadata"
+                       disablePictureInPicture
+                       controlslist="nodownload nofullscreen noremoteplayback">
                     <source src="${personaje.video}" type="video/mp4">
                 </video>
                 <div class="superposicion-personaje">
@@ -283,6 +289,23 @@ function actualizarPersonajes() {
             
             cuadriculaPersonajes.appendChild(tarjetaPersonaje);
         });
+        
+        // Agregar event listeners para prevenir comportamiento por defecto
+        setTimeout(() => {
+            const videos = document.querySelectorAll('.video-personaje');
+            videos.forEach(video => {
+                // Prevenir que el video capture eventos táctiles
+                video.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, { passive: false });
+                
+                video.addEventListener('touchmove', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, { passive: false });
+            });
+        }, 100);
         
         // Crear modales dinámicamente
         crearModalesPersonajes();
@@ -304,7 +327,7 @@ function crearModalesPersonajes() {
                 <div class="contenido-modal-personaje">
                     <button class="cerrar-modal-personaje">&times;</button>
                     <div class="cuerpo-modal-personaje">
-                        <video class="video-modal-personaje" autoplay muted loop>
+                        <video class="video-modal-personaje" autoplay muted loop playsinline webkit-playsinline>
                             <source src="${personaje.video}" type="video/mp4">
                         </video>
                         <div class="info-modal-personaje">
@@ -482,7 +505,6 @@ function inicializarFuncionalidades() {
         }
     });
 
-    // Cerrar modales de personajes
     const closeCharacterBtns = document.querySelectorAll('.cerrar-modal-personaje');
     
     closeCharacterBtns.forEach(btn => {
@@ -495,7 +517,6 @@ function inicializarFuncionalidades() {
         });
     });
 
-    // Cerrar con Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             allModals.forEach(modal => {
@@ -507,7 +528,6 @@ function inicializarFuncionalidades() {
         }
     });
 
-    // Efectos de hover para botones
     const buttons = document.querySelectorAll('.boton-principal, .boton-accion, .boton-creador');
     
     buttons.forEach(button => {
@@ -521,16 +541,37 @@ function inicializarFuncionalidades() {
     });
 }
 
-// Cuando el DOM esté listo (como respaldo)
+function esDispositivoMovil() {
+    return (typeof window.orientation !== "undefined") || 
+           (navigator.userAgent.indexOf('IEMobile') !== -1) ||
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function inicializarCorreccionesMoviles() {
+    if (esDispositivoMovil()) {
+        console.log('Dispositivo móvil detectado - aplicando correcciones');
+        document.body.classList.add('dispositivo-movil');
+        
+        setTimeout(() => {
+            const videosTarjetas = document.querySelectorAll('.video-personaje');
+            videosTarjetas.forEach(video => {
+                video.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                });
+            });
+        }, 500);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM cargado');
-    // Si los datos ya están cargados, inicializar funcionalidades
     if (datosProyecto) {
         inicializarFuncionalidades();
+        inicializarCorreccionesMoviles();
     }
 });
 
-// Función para recargar datos (útil para debugging)
+// Función para recargar datos - CORREGIDO
 function recargarDatos() {
     cargarDatosJSON().then(() => {
         actualizarContenido();
